@@ -1,0 +1,1 @@
+{"code": "#include <stdio.h>\n#include <sys/types.h>\n\n#ifdef SunOS\ntypedef uint64_t u_int64_t;\n#endif\n\nint main(int argc, char **argv) {\n    u_int64_t val = 123456789123L;\n\n#ifdef SunOS\n    printf(\"%lu\\n\", val);\n#else\n    printf(\"%ju\\n\", val);\n#endif\n}\n"}
